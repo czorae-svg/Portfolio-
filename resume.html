@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CZOR — Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style> 
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:#0b0d12;
+  color:#fff;
+  line-height:1.7;
+}
+
+/* ===== VARIABLES ===== */
+:root{
+  --panel:#121520;
+  --border:rgba(255,255,255,.08);
+  --muted:#9aa0b4;
+  --accent:#8aa2ff;
+}
+
+/* ===== BACKGROUND ===== */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 25% 30%, #8aa2ff33, transparent 40%),
+    radial-gradient(circle at 80% 70%, #ff8ad133, transparent 40%);
+  z-index:-1;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 36px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(20px);
+  background:rgba(11,13,18,.65);
+  border-bottom:1px solid var(--border);
+}
+nav strong{letter-spacing:5px;font-size:14px}
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+}
+nav a:hover{color:#fff}
+
+/* ===== LAYOUT ===== */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:140px 36px 80px;
+}
+
+/* ===== HEADER ===== */
+header{
+  margin-bottom:80px;
+}
+header h1{
+  font-size:3.2rem;
+  letter-spacing:-1px;
+}
+header p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+/* ===== SECTIONS ===== */
+.section{
+  margin-bottom:70px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.section.show{
+  opacity:1;
+  transform:none;
+}
+.section h2{
+  font-size:1.8rem;
+  margin-bottom:24px;
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
+  margin-bottom:20px;
+  transition:.4s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+.small{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.skill{
+  padding:8px 14px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  font-size:.85rem;
+  background:#0e111a;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  color:var(--muted);
+  margin-top:100px;
+}
+
+@media(max-width:768px){
+  nav{padding:16px 22px}
+  .container{padding:120px 22px}
+  header h1{font-size:2.4rem}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<nav>
+  <strong>CZOR</strong>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<div class="container">
+
+<header class="section">
+  <h1>CZOR</h1>
+  <p>UI Designer & Web Developer</p>
+</header>
+
+<section class="section">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I build clean, modern, and animation-focused websites.
+      Passionate about minimal UI, smooth interactions,
+      and professional presentation.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Skills</h2>
+  <div class="card">
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">UI / UX Design</div>
+      <div class="skill">Animations</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Creative Coding</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <strong>CZOR Portfolio</strong>
+    <p class="small">Advanced animated website</p>
+    <p>Minimal UI, parallax background, modal projects, and smooth transitions.</p>
+  </div>
+
+  <div class="card">
+    <strong>Genshin-Inspired UI</strong>
+    <p class="small">Fan / Practice Project</p>
+    <p>Game-style interface with animation concepts and character layouts.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Education</h2>
+  <div class="card">
+    <strong>Self-Taught Developer</strong>
+    <p class="small">Learning by building real projects</p>
+  </div>
+</section>
+
+<footer class="section">
+  © 2026 CZOR — Resume
+</footer>
+
+</div>
+
+<script>
+/* ===== SCROLL ANIMATION ===== */
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:.2});
+sections.forEach(s=>observer.observe(s));
+</script>
+
+</body>
+</html>
+<!-- RESUME SECTION -->
+<section id="resume" class="section">
+  <h2>Resume</h2>
+<div class="resume-sticky">
+  <h3>CZOR</h3>
+  <p>UI/UX Designer & Web Developer</p>
+  <p class="muted">Self-Taught & Building Real Projects</p>
+</div>.resume-sticky{
+  position: sticky;
+  top: 100px; /* distance from top */
+  background: var(--panel);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 40px;
+  max-width: 300px;
+}#resume .resume-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}<div class="resume-container">
+  <div class="resume-sticky">...</div>
+  <div class="timeline">...</div>
+</div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>2026 - Present</h3>
+        <p>UI/UX Designer & Web Developer</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>2025</h3>
+        <p>Self-Taught Developer</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>2024</h3>
+        <p>Learned HTML, CSS, JavaScript</p>
+      </div>/* TIMELINE */
+.timeline{
+  position: relative;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item{
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item.show{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-content{
+  background: var(--panel);
+  padding: 15px 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+    </div>=
+
+  </div>
+</section>const timelineItems = document.querySelectorAll('.timeline-item');
+
+const timelineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+},{threshold: 0.2});
+
+timelineItems.forEach(item => timelineObserver.observe(item));
+
