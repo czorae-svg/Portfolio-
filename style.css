@@ -1,0 +1,9 @@
+/* PAGE TRANSITION */
+body{
+  transition: opacity 0.7s ease;
+  opacity: 0;
+}
+
+body.loaded{
+  opacity: 1;
+}
